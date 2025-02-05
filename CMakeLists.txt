@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.30)
 
-project(LLVMTargerParser LANGUAGES C CXX)
+project(LLVMTargerParser
+    VERSION 19.1.7
+    DESCRIPTION "🎯 LLVM's llvm::Triple and associated members extracted into a standalone C++ library"
+    HOMEPAGE_URL "https://github.com/jcbhmr/LLVMTargetParser"
+    LANGUAGES C CXX
+)
 
 add_library(LLVMSupportBlake3)
 target_sources(LLVMSupportBlake3 PRIVATE

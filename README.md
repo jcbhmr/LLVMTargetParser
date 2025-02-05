@@ -27,4 +27,6 @@ This project overlays its own build system onto the existing C++ source files in
 
 TL;DR: We have `llvm.src/lib/*` which has only the source `*.cpp` files that we need to build the `libLLVMTargetParser.a` or similar library and a separate `LLVM-Linux-X64/include/*` directory that holds the released generated header files.
 
-Use `./task.py generate [version]` to generate `llvm.src/` and `LLVM-Linux-X64/` directories for the given LLVM version or default to fetching the latest version. This uses uv. You'll need uv installed.
+Use `./task.cmake generate` to generate `llvm.src/` and `LLVM-Linux-X64/` directories for the LLVM version that corresponds with the `project(... VERSION X.Y.Z)` in `CMakeLists.txt`.
+
+Try to keep this project's versions in sync with the LLVM version that this project is extracted from. That means v19.0.0 of LLVM should correspond to v19.0.0 of this project.
