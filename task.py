@@ -69,7 +69,7 @@ def generate_llvm_linux_x64() -> None:
 
     print(f"Extracting LLVM-{version}-Linux-X64.tar.xz")
     with tarfile.open(f"LLVM-{version}-Linux-X64.tar.xz", "r") as tar:
-        tar.extractall(".", [m for m in tar.getmembers() if m.name.startswith(f"LLVM-{version}-Linux-X64/include/llvm/ADT/") or m.name.startswith(f"LLVM-{version}-Linux-X64/include/llvm/Config/") or m.name.startswith(f"LLVM-{version}-Linux-X64/include/llvm/Support/") or m.name.startswith(f"LLVM-{version}-Linux-X64/include/llvm/TargetParser/") or m.name.startswith(f"LLVM-{version}-Linux-X64/include/llvm-c/")])
+        tar.extractall(".", [m for m in tar.getmembers() if m.name.startswith(f"LLVM-{version}-Linux-X64/include/llvm/ADT/") or m.name.startswith(f"LLVM-{version}-Linux-X64/include/llvm/Config/") or m.name.startswith(f"LLVM-{version}-Linux-X64/include/llvm/Support/") or m.name.startswith(f"LLVM-{version}-Linux-X64/include/llvm/Demangle/") or m.name.startswith(f"LLVM-{version}-Linux-X64/include/llvm/TargetParser/") or m.name.startswith(f"LLVM-{version}-Linux-X64/include/llvm-c/")])
     print(f"Extracted LLVM-{version}-Linux-X64.tar.xz")
     if os.path.exists("LLVM-Linux-X64"):
         print(f"Removing existing LLVM-Linux-X64")

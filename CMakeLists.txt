@@ -170,6 +170,7 @@ target_include_directories(LLVMSupport
     PUBLIC ./LLVM-Linux-X64/include
     PRIVATE ./llvm.src/lib/Support/Unix ./llvm.src/lib/Support/Windows ./LLVM-Linux-X64/include/llvm/ADT ./LLVM-Linux-X64/include/llvm/Support
 )
+target_include_directories(LLVMSupport BEFORE PUBLIC ./include)
 target_compile_features(LLVMSupport PUBLIC cxx_std_20)
 
 add_library(LLVMTargerParser)
@@ -191,5 +192,6 @@ target_include_directories(LLVMTargerParser
     PUBLIC ./LLVM-Linux-X64/include
     PRIVATE ./llvm.src/lib/TargetParser/Unix ./llvm.src/lib/TargetParser/Windows
 )
+target_include_directories(LLVMTargerParser BEFORE PUBLIC ./include)
 target_link_libraries(LLVMTargerParser PUBLIC LLVMSupport)
 target_compile_features(LLVMTargerParser PUBLIC cxx_std_20)
