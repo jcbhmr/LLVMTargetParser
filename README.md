@@ -1,4 +1,4 @@
-# LLVM TargetParser library
+# `LLVMTargetParser` library
 
 🎯 LLVM's `llvm::Triple` and associated members extracted into a standalone C++ library
 
