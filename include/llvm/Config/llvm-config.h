@@ -160,9 +160,8 @@
 
 /* Define if this is Unixish platform */
 // #cmakedefine LLVM_ON_UNIX ${LLVM_ON_UNIX}
-// https://sourceforge.net/p/predef/wiki/Standards/
 // https://sourceforge.net/p/predef/wiki/OperatingSystems/
-#if defined(unix) || defined(__unix__) || defined(__unix) || defined(_POSIX_VERSION)
+#if defined(unix) || defined(__unix__) || defined(__unix)
 #define LLVM_ON_UNIX 1
 #else
 #define LLVM_ON_UNIX 0
