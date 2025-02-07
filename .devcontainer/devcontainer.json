@@ -1,3 +1,7 @@
 {
-    "updateContentCommand": "curl -fsSLo \"${s=$(mktemp)}\" https://github.com/Kitware/CMake/releases/download/v3.31.5/cmake-3.31.5-linux-x86_64.sh && chmod +x \"$s\" && sudo \"$s\" --prefix=/usr --skip-license && rm \"$s\" && sudo bash -c \"$(wget -O - https://apt.llvm.org/llvm.sh)\" bash all"
+    "image": "mcr.microsoft.com/devcontainers/cpp",
+    "features": {
+        "ghcr.io/devcontainers/features/rust": {}
+    },
+    "updateContentCommand": "cargo install wit-bindgen-cli && curl -Lo /tmp/wasi-sdk.deb https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-25/wasi-sdk-25.0-x86_64-linux.deb && sudo dpkg -i /tmp/wasi-sdk.deb && rm /tmp/wasi-sdk.deb"
 }
