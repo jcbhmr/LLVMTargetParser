@@ -160,11 +160,10 @@
 
 /* Define if this is Unixish platform */
 // #cmakedefine LLVM_ON_UNIX ${LLVM_ON_UNIX}
+// https://sourceforge.net/p/predef/wiki/Standards/
 // https://sourceforge.net/p/predef/wiki/OperatingSystems/
-#if defined(unix) || defined(__unix__) || defined(__unix)
+#if defined(unix) || defined(__unix__) || defined(__unix) || defined(_POSIX_VERSION)
 #define LLVM_ON_UNIX 1
-#else
-#define LLVM_ON_UNIX 0
 #endif
 
 /* Define if we have the Intel JIT API runtime support library */
